@@ -41,4 +41,50 @@ $situacao = verificarAprovacao($media);
 
 echo "Notas: $nota1, $nota2, $nota3 <br>";
 echo "Média: $media <br>";
-echo "Situação: $situacao";
+echo "Situaçao: $situacao";
+
+public function store(Request $request){
+    $data = $request->all();
+    $notas = $data["notas"];
+    $media = $data["media"];
+    $situacao = $data["situaçao"];
+
+    $notas = new ImcModel();
+    $notas->nome = $nome;
+    $notas->media = $media;
+    $notas->$situacao = $situacao;
+
+
+    $notas->save();
+
+    return redirect()->route('notas.calcular', $data);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

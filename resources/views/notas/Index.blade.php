@@ -6,16 +6,21 @@
     @csrf
     <div class="form-group">
       <label for="exampleInputnome">nome</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nome">
+      <input type="text" class="form-control" id="exampleInputNome" aria-describedby="emailHelp" placeholder="nome">
     </div>
     <div class="form-group">
       <label for="exampleInputAltura">media</label>
-      <input type="password" class="form-control" id="exampleInputAltura" placeholder="Altura">
+      <input type="text" class="form-control" id="exampleInputMedia" placeholder="Altura">
     </div>
-    <div class="form-nome">
-      <input type=nome class="form-nome-input" id="nome">
+    <div class="form-group">
+    <label for="exampleInputStatus">status</label>
+      <input type=text class="form-control" id="exampleInputStatus">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Calculer</button>
   </form>
+  <label >RESULTADO</label><br>
+  <label>notas: {{$resultado["notas"]}}</label><br>
+  <label>FAIXA: {{$resultado["faixa"]}}</label><br>
+  <br><br><br>
 </x-layout>
 

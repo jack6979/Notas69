@@ -31,7 +31,7 @@ function verificarAprovacao($media) {
     }
 }
 
-// Exemplo de uso das funções
+
 $nota1 = 8.5;
 $nota2 = 7.2;
 $nota3 = 6.8;
@@ -43,26 +43,28 @@ echo "Notas: $nota1, $nota2, $nota3 <br>";
 echo "Média: $media <br>";
 echo "Situaçao: $situacao";
 
+
+class notaController extends Controller{
+
+
 public function store(Request $request){
     $data = $request->all();
+
+
     $notas = $data["notas"];
     $media = $data["media"];
-    $situacao = $data["situaçao"];
+    $situacao = $data["situacao"];
 
-    $notas = new ImcModel();
-    $notas->nome = $nome;
-    $notas->media = $media;
-    $notas->$situacao = $situacao;
+    $notaModel = new notaModel();
+    $notaModel->nome = $notas;
+    $notaModel->media = $media;
+    $notaModel->situacao = $situacao;
 
-
-    $notas->save();
-
-    return redirect()->route('notas.calcular', $data);
+    $notaModel->save();
 
 
-}
-
-
+    return redirect()->route('notas.calcular', ['id' => $notaModel->id]);
+}}
 
 
 
